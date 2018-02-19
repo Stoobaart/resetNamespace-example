@@ -7,6 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('posts', function() {
+    this.route('post', function() {
+      this.route('user', { path: '/user', resetNamespace: true });
+    });
+  });
 });
 
 export default Router;
